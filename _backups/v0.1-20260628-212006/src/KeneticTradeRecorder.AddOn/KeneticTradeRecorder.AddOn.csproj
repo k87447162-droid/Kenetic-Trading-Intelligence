@@ -1,0 +1,47 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <!--
+    KeneticTradeRecorder.AddOn (net48). References the NinjaTrader assemblies.
+    The folders are passed in by KeneticRecorder.ps1 (Build/Validate) as
+    /p:NtInstallBin=... and /p:NtUserCustom=..., resolved from your machine.
+    The defaults below are only used if you build by hand without those.
+      * NinjaTrader.Core.dll / NinjaTrader.Gui.dll live in NtInstallBin
+      * NinjaTrader.Custom.dll lives in NtUserCustom
+  -->
+  <PropertyGroup>
+    <TargetFramework>net48</TargetFramework>
+    <LangVersion>11.0</LangVersion>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>disable</ImplicitUsings>
+    <AssemblyName>KeneticTradeRecorder.AddOn</AssemblyName>
+    <RootNamespace>KeneticTradeRecorder.AddOn</RootNamespace>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+    <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
+    <Deterministic>true</Deterministic>
+    <NoWarn>$(NoWarn);CS1591</NoWarn>
+
+    <NtInstallBin Condition="'$(NtInstallBin)' == ''">$(ProgramFiles)\NinjaTrader 8\bin</NtInstallBin>
+    <NtUserCustom Condition="'$(NtUserCustom)' == ''">$(USERPROFILE)\Documents\NinjaTrader 8\bin\Custom</NtUserCustom>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Reference Include="NinjaTrader.Core">
+      <HintPath>$(NtInstallBin)\NinjaTrader.Core.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="NinjaTrader.Gui">
+      <HintPath>$(NtInstallBin)\NinjaTrader.Gui.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="NinjaTrader.Custom">
+      <HintPath>$(NtUserCustom)\NinjaTrader.Custom.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\KeneticTradeRecorder.Shared\KeneticTradeRecorder.Shared.csproj" />
+    <ProjectReference Include="..\KeneticTradeRecorder.Core\KeneticTradeRecorder.Core.csproj" />
+  </ItemGroup>
+
+</Project>

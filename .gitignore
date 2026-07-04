@@ -1,0 +1,82 @@
+# =============================================================
+# KENETIC Trading Intelligence - .gitignore
+# =============================================================
+
+# ---- Visual Studio ----
+.vs/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+*.userprefs
+[Bb]in/
+[Oo]bj/
+[Dd]ebug/
+[Rr]elease/
+x64/
+x86/
+[Bb]uild/
+bld/
+
+# ---- JetBrains Rider / ReSharper ----
+.idea/
+*.sln.iml
+_ReSharper*/
+*.DotSettings.user
+
+# ---- .NET build artifacts ----
+project.lock.json
+*.nupkg
+*.snupkg
+artifacts/
+*.binlog
+
+# ---- NinjaTrader 8 generated files ----
+# Compiled custom assemblies and machine-specific generated code
+NinjaTrader.Custom/bin/
+NinjaTrader.Custom/obj/
+*.cs.bak
+*.ninjascript.bak
+
+# ---- Databases (SQLite / DuckDB) ----
+*.db
+*.sqlite
+*.sqlite3
+*.db-shm
+*.db-wal
+*.duckdb
+*.duckdb.wal
+database/*.db
+database/*.sqlite*
+database/*.duckdb*
+
+# ---- Exports / large data ----
+exports/
+*.parquet
+*.feather
+
+# ---- Logs ----
+logs/
+*.log
+
+# ---- Temp / OS ----
+*.tmp
+*.temp
+*.bak
+*.cache
+Thumbs.db
+ehthumbs.db
+.DS_Store
+desktop.ini
+
+# ---- Python (research) ----
+__pycache__/
+*.py[cod]
+.ipynb_checkpoints/
+.venv/
+venv/
+
+# ---- R (research) ----
+.Rhistory
+.RData
+.Rproj.user/

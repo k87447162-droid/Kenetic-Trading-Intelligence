@@ -1,0 +1,8 @@
+﻿{
+    "FilterMode":  "IncludeOnly",
+    "Accounts":  [
+                     "TDFYSL25899191319"
+                 ],
+    "DataDirectory":  "C:\\Users\\eagle\\Documents\\NinjaTrader 8\\KeneticTradeRecorder\\data",
+    "EchoToOutputWindow":  true
+}

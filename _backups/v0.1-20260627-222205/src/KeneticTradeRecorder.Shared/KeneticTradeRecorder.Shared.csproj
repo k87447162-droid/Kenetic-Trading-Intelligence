@@ -1,0 +1,22 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <!--
+    KeneticTradeRecorder.Shared
+    Pure domain vocabulary: identifiers, enums, immutable records. No NinjaTrader
+    dependency, no I/O, no threads. Targets netstandard2.0 so it is consumable by
+    NinjaTrader 8 (.NET Framework 4.8) AND by modern test/tooling (.NET 6/8).
+  -->
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <LangVersion>11.0</LangVersion>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>disable</ImplicitUsings>
+    <AssemblyName>KeneticTradeRecorder.Shared</AssemblyName>
+    <RootNamespace>KeneticTradeRecorder.Shared</RootNamespace>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+    <Deterministic>true</Deterministic>
+    <!-- CS1591: suppress "missing XML comment" noise while still emitting the doc file. -->
+    <NoWarn>$(NoWarn);CS1591</NoWarn>
+  </PropertyGroup>
+
+</Project>

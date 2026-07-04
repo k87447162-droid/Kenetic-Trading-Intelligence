@@ -1,0 +1,24 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <!--
+    KeneticTradeRecorder.Core
+    Pure trade-assembly logic. No NinjaTrader dependency. netstandard2.0 so it is
+    consumable by NinjaTrader 8 (.NET FW 4.8) and unit-testable on .NET 6/8.
+  -->
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <LangVersion>11.0</LangVersion>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>disable</ImplicitUsings>
+    <AssemblyName>KeneticTradeRecorder.Core</AssemblyName>
+    <RootNamespace>KeneticTradeRecorder.Core</RootNamespace>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+    <Deterministic>true</Deterministic>
+    <NoWarn>$(NoWarn);CS1591</NoWarn>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\KeneticTradeRecorder.Shared\KeneticTradeRecorder.Shared.csproj" />
+  </ItemGroup>
+
+</Project>
