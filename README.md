@@ -1,8 +1,8 @@
-# KENETIC Trading Intelligence Platform
+﻿# KENETIC Trading Intelligence Platform
 
 An institutional-grade market observation and research platform. KENETIC records
 market facts, reconstructs them faithfully, and turns them into validated,
-reproducible research â€” keeping recording, research, analytics, AI, and
+reproducible research Ã¢â‚¬â€ keeping recording, research, analytics, AI, and
 execution as separate, well-bounded systems.
 
 > **Status:** Foundation / scaffolding. This repository currently contains the
@@ -36,12 +36,15 @@ executes validated rules. These responsibilities never mix.
 
 | Path | Purpose |
 |------|---------|
-| `docs/00_Foundation/` | Constitution, vision, philosophy, glossary, roadmap. |
-| `docs/01_Architecture/` | System and engine-level architecture specifications. |
-| `docs/02_Research/` | Research, validation, evidence, and lifecycle frameworks. |
-| `docs/03_Features/` | Per-feature design and definition documents. |
-| `docs/04_Development/` | Coding standards, workflow, testing, performance, versioning. |
-| `docs/05_Research_Findings/` | Dated research results and validation logs. |
+| `docs/01_Project_Governance/` | Constitution, vision, philosophy, roadmap, AI instructions. |
+| `docs/02_Trading_Strategy/` | Current strategy, playbooks, workflow, checklists. |
+| `docs/03_Research/` | Research board, hypothesis ledger, validation and evidence frameworks. |
+| `docs/04_Digital_Twin/` | The evidence-based model of the trader - the primary artifact. |
+| `docs/05_Knowledge/` | Glossary, book assimilations, papers, market concepts. |
+| `docs/06_Data/` | Data dictionary, metrics, context variables, feature definitions. |
+| `docs/07_Development/` | Architecture specifications and development standards. |
+| `docs/08_Daily_Operations/` | Daily/weekly/monthly reviews, experiment reports, findings. |
+| `docs/99_Archive/` | Superseded material, preserved with timestamps. |
 | `src/` | Source code (NinjaTrader 8 / C# and supporting tooling). |
 | `database/` | Local research databases and schema artifacts. |
 | `exports/` | Generated exports (Parquet/CSV) for downstream analysis. |
@@ -59,16 +62,16 @@ KENETIC is a system-first platform. Independent engines each own a single
 responsibility and communicate through well-defined data, not shared mutable
 state:
 
-- **Market Recorder** â€” captures raw market facts.
-- **Event Engine** â€” derives discrete events from observations.
-- **Feature Engine** â€” computes versioned features from raw data.
-- **Level / Order Flow / Snapshot Engines** â€” specialised observation and
+- **Market Recorder** Ã¢â‚¬â€ captures raw market facts.
+- **Event Engine** Ã¢â‚¬â€ derives discrete events from observations.
+- **Feature Engine** Ã¢â‚¬â€ computes versioned features from raw data.
+- **Level / Order Flow / Snapshot Engines** Ã¢â‚¬â€ specialised observation and
   reconstruction subsystems.
-- **Trade Recorder** â€” records execution facts, separate from strategy logic.
-- **AI Architecture** â€” consumes validated research data; never drives live
+- **Trade Recorder** Ã¢â‚¬â€ records execution facts, separate from strategy logic.
+- **AI Architecture** Ã¢â‚¬â€ consumes validated research data; never drives live
   execution directly.
 
-See `docs/01_Architecture/` for the authoritative specifications.
+See `docs/07_Development/Architecture/` for the authoritative specifications.
 
 ## Development Workflow
 
@@ -82,9 +85,9 @@ See `docs/01_Architecture/` for the authoritative specifications.
 
 ## How New Features Are Added
 
-1. Document the feature as a hypothesis in `docs/03_Features/`.
+1. Document the feature as a hypothesis in `docs/06_Data/Features/`.
 2. Define its single authoritative calculation and its data owner.
-3. Implement behind the appropriate engine â€” features plug into systems, never
+3. Implement behind the appropriate engine Ã¢â‚¬â€ features plug into systems, never
    the reverse.
 4. Version the calculation and preserve reproducibility.
 5. Promote to live influence only after the validation framework is satisfied.
@@ -95,13 +98,13 @@ See `docs/01_Architecture/` for the authoritative specifications.
 - Separate observations from conclusions at all times.
 - When evidence contradicts a prior conclusion, preserve the prior work, update
   the conclusion, and document why it changed.
-- Record findings in `docs/05_Research_Findings/`.
+- Record findings in `docs/08_Daily_Operations/Research_Findings/`.
 
 ## Validation Workflow
 
-- Evidence is graded by level (see `docs/02_Research/03_Evidence_Levels.md`).
+- Evidence is graded by level (see `docs/03_Research/03_Evidence_Levels.md`).
 - Features progress through a defined lifecycle
-  (`docs/02_Research/04_Feature_Lifecycle.md`).
+  (`docs/03_Research/04_Feature_Lifecycle.md`).
 - No hypothesis influences live trading until it meets the validation bar,
   including out-of-sample and walk-forward checks.
 
@@ -115,7 +118,7 @@ See `docs/01_Architecture/` for the authoritative specifications.
 
 ## Future Roadmap
 
-Roadmap detail is maintained in `docs/00_Foundation/04_Project_Roadmap.md`. At a
+Roadmap detail is maintained in `docs/01_Project_Governance/04_Project_Roadmap.md`. At a
 high level: harden the recorder, formalise the schema, build the
 research/validation pipeline, then layer analytics and AI on top of a trustworthy
 data foundation.

@@ -1,4 +1,4 @@
-# PROJECT RULES
+﻿# PROJECT RULES
 
 The operating rules and engineering philosophy for the KENETIC Trading
 Intelligence Platform. These rules are written to hold for the life of the
@@ -56,7 +56,7 @@ observation over adding another trading feature.
 A feature progresses: Hypothesis -> Documented -> Implemented (versioned) ->
 Validated -> Promoted, with preserved reproducibility at every stage. A feature
 only gains live influence after validation. See
-`docs/02_Research/04_Feature_Lifecycle.md`.
+`docs/03_Research/04_Feature_Lifecycle.md`.
 
 ## Digital Twin Philosophy
 
@@ -82,7 +82,7 @@ be analysed without re-deriving raw facts.
 - Version feature calculations; never overwrite historical information.
 - Changing a calculation creates a new version; prior versions and their outputs
   remain reproducible.
-- See `docs/04_Development/05_Versioning.md`.
+- See `docs/07_Development/Development_Standards/05_Versioning.md`.
 
 ## Event Philosophy
 

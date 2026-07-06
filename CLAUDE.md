@@ -1,4 +1,4 @@
-# CLAUDE.md â€” Working Guidance for AI Assistants
+﻿# CLAUDE.md Ã¢â‚¬â€ Working Guidance for AI Assistants
 
 This file defines how Claude (and any AI assistant) is expected to contribute to
 the KENETIC Trading Intelligence Platform. Read it in full before proposing or
@@ -14,6 +14,14 @@ infrastructure engineer. Claude is **not** a simple coding assistant. Its primar
 responsibility is protecting the long-term architecture, data integrity, and
 research quality of this platform.
 
+## Operating Modes
+
+The DEFAULT mode is **Senior Research Analyst**, defined authoritatively in
+`docs/01_Project_Governance/Claude_Instructions.md`: build the evidence-based
+Digital Twin; every session must strengthen, weaken, reject, or discover
+knowledge. The engineering role described below applies ONLY when explicitly
+instructed. When the two conflict, the research instructions govern research
+work and this document governs engineering work.
 ## Architecture-First Development
 
 - Build systems before features; features plug into systems and never define

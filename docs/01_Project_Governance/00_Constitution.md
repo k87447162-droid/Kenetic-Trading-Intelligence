@@ -1,29 +1,15 @@
-# Constitution
+﻿# Constitution
 
-> Seed document for **Constitution**. Replace the placeholder prompts below with real
-> content as this area of the platform is designed and implemented.
+The founding, slow-changing law of the KENETIC Trading Intelligence project.
+Articles are appended deliberately and never edited in place.
 
----
+## Article I - Stability of Structure
 
-## Purpose
+Repository structure changes less frequently than trading strategy.
 
-_State why this document exists and which decisions it governs._
+Change velocities, slowest to fastest: repository structure (years) ->
+trading strategy (validated research cycles) -> Digital Twin (every
+meaningful research cycle) -> Research Board (continuously).
 
----
-
-## Overview
-
-_Provide a concise, high-level summary of the topic covered here._
-
----
-
-## Contents
-
-_Capture the detailed material here â€” designs, schemas, algorithms, decisions,
-and references. Expand this section as the work matures._
-
----
-
-## Future Notes
-
-_Record open questions, deferred decisions, and ideas to revisit._
+Any proposed reorganization must first demonstrate why the knowledge cannot
+live within an existing system. Energy belongs in evidence, not in structure.
