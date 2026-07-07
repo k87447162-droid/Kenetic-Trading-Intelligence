@@ -1,16 +1,10 @@
-# Weaknesses
+# Weaknesses — [HUMAN]
+> Digital Twin component. Rev.2, 2026-07-06, after population correction. Evidence base: 6 confirmed discretionary trades. NOTHING validated.
 
-> Created 2026-07-05 by the KENETIC architecture script. This is the single
-> authoritative home for this concept. Update it in place; never fork it.
+**W-01 (rev.) — Manual entries occur only in maximum-risk conditions.** [Hypothesis, n=6, Low] Full-size NQ, premarket, catalyst-adjacent, instant max size, ≤5-min holds; -$3,970 = the week's entire human footprint. → H-001.
 
-## Purpose
+**W-02 — Post-loss cascade under fast tape.** [Observation, 1 episode] 4 re-entries ≤4 minutes, direction flips, post-NFP. → H-002, H-003.
 
-Validated weaknesses, each backed by evidence level, sample size, and supporting sessions.
+**W-03 — No premarket plan is in evidence for manual trades.** [Fact-of-absence] Nothing in the record distinguishes planned from impulsive entry. Fix precedes measurement: a written intent line before any manual trade.
 
-## Contents
-
-_To be developed as evidence accumulates._
-
-## Change Log
-
-- 2026-07-05: Document created.
+*(W-03–W-05 of rev.1 — payoff symmetry, chopping participation, churn — were STRATEGY properties; moved to SH-track.)*

@@ -1,16 +1,8 @@
-# Strengths
+# Strengths — [HUMAN]
+> Digital Twin component. Rev.2, 2026-07-06. Evidence base: 6 discretionary trades. NOTHING validated.
 
-> Created 2026-07-05 by the KENETIC architecture script. This is the single
-> authoritative home for this concept. Update it in place; never fork it.
+**S-01 (rev.) — Cascade termination.** [Observation, 1 episode] After the 07-02 sequence (-$1,950 in 6 minutes) the trader placed **no further manual trades that day**. The earlier claim that he 'continued in disciplined micros' was misattribution — the micros were the algorithm. What survives, corrected and weaker: the cascade stopped rather than continuing on the eval account.
 
-## Purpose
+**S-02 — Builds systems rather than only trading impulses.** [Fact] The same week that produced 6 impulsive-looking manual trades also ran a multi-setup algorithmic program and a full recording pipeline. The constructive channel exists; the research question is why discretionary risk-taking bypasses it.
 
-Validated strengths of the trader, each backed by evidence level, sample size, and supporting sessions.
-
-## Contents
-
-_To be developed as evidence accumulates._
-
-## Change Log
-
-- 2026-07-05: Document created.
+*(rev.1's winner-management and reversal-selection strengths were STRATEGY trades; retracted → R-002, SH-005.)*
