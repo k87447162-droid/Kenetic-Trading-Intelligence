@@ -27,11 +27,11 @@ Next test: tag manual trades with minutes-from-release.
 Confidence: **Low** | Sample: 101 unfiltered rows (-$609.50, 38.6% win) vs 8 DIV rows (+$2,047.50, 75% win).
 Next test: 30+ DIV occurrences; check the 8 aren't one market/day cluster.
 
-**SH-002 (refined 2026-07-07) — Exit giveback is exit-TYPE dependent, not universal.**
-Confidence: **Low** | Evidence: W27 aggregate 9.4% MFE capture; but shadow days show targets/trails preserving MFE well (ETD 2.6 pts on a target; trails kept 53% and rescued a bad entry to scratch) while the large giveback instance (Mon T1, 56.4-pt ETD) came via full-stop-after-MFE. Next test: MFE capture split by exitType across the shadow window; MFE-lock vs time-stop comparison stands.
+**SH-002 — Strategy exits capture ~9% of available MFE ($12,733 weekly giveback).**
+Confidence: **Low** (one week). Next test: exit-rule variants on recorded MFE paths.
 
-**SH-003 — Winners work immediately; non-performing trades rarely recover.**
-Confidence: **Low → upper-Low**, now with a defined EXCEPTION CLASS. Supports: W27 aggregates; Mon winner MAE 0.2 pts; Tue T2 MAE 3.6 pts. Exception (2026-07-07 T1): an opening-flush winner survived 48 pts adverse — entries within ~5 min of the open carry structurally wide stops and violate the pattern. Scope restriction candidate: exclude `minsSinceOpen < 5`. Next test: time-to-MFE distribution excluding opening trades.
+**SH-003 — Winners work immediately (avg MAE $30); non-performing trades rarely recover (losers avg MFE $44).**
+Confidence: **Low**. Next test: time-to-MFE distribution; simulated time-stop.
 
 **SH-004 — Chopping/Drifting regimes are strongly negative for the strategy.** STRENGTHENED 2026-07-06 with platform-verified P&L via time-join (165/172 trades matched to TIR context): Chopping n=26, 19.2% win, -$844.70; Drifting n=12, 16.7% win, -$265.00. Combined: 38 trades, ~18% win, **-$1,110**. Confidence: **Low→upper-Low**. **MEASUREMENT CAVEAT (2026-07-07, DI-1):** the regime variable is produced by multiple indicator instances emitting contradictory states; provenance of the TIR regime tag is undefined. No promotion until regime provenance is fixed; the effect may be real but the measuring instrument is currently ambiguous.
 
@@ -49,11 +49,11 @@ Required next test: 2–3 weeks shadow measurement — strategy unchanged, every
 **Shadow ledger:** Day 1 (2026-07-06, 5 trades, MNQ, 4-lot config): Chopping n=2 -$256.50 (supports); Drifting n=1 +$39.50 (contradicts); gate counterfactual +$217.00. Comparability caveat: sizing (4-lot) and effective universe (MNQ only fired) differ from the W27 baseline — shadow tallies kept in counts/points as well as dollars.
 **REDESIGN (2026-07-07):** per DI-1 the regime label is not a reliable measuring instrument. The shadow test's primary gate variable switches to independently computable value-location metrics from the raw dumps — POC distance in ATR, side of value, value-migration direction, participation (volRatio) — with the regime tally kept as a secondary series. See SH-009.
 
-**SH-009 (refined 2026-07-07) — Extension from value is conditional: fatal against dying flow, tradable with live flow.**
-Confidence: **Speculative→Low** | Sample: 8 trades, 2 sessions.
-Naive form ("extension = losses") now carries 2 contradictions in 8: Tue T2 WON at -4.5 ATR below stale value, and Mon's winner was extended. Interaction form strengthening: extension entered WITH live accelerating delta and elevated participation → winners (Tue T1 amid volRatio 6.67, Tue T2); extension entered as participation dies → Mon T2/T5 losses, Tue T3 scratch-rescue. The adverse-side geometry (Mon T5) remains its own negative class. Refined feature: `pocDist_ATR × deltaAccel × volRatio`, plus `valueRelocation` (Tue's 350-pt POC relocation was the day's pivotal event and no setup referenced it).
-Next test: continue accumulation; bucket entries by (extension, flow-state) 2×2.
-**Shadow ledger:** Day 1: Chop n=2 -$256.50, Drifting n=1 +$39.50, label-gate counterfactual +$217.00. Day 2: **the label-gate result depends on which emitter you believe** — under stream-A labels both CHOPPING trades won and the gate would have COST -$127.40; under the TIR-snapshot labels (received with the late zip: ReversalForming/TrendingDown/ReversalForming) the gate would have suppressed NOTHING ($0), and SH-005 would instead gain two wins. Same trades, opposite conclusions, purely from emitter choice. Running stream-A label-gate net: +$89.60 over 2 days. This divergence is DI-1's impact made concrete and is why the value/flow feature series is the primary instrument.
+**SH-009 (new) — Entries at maximal extension from value, or at the adverse side of value, are the loss engine.**
+Confidence: **Speculative** | Sample: 5 trades, 1 session (independent reconstruction).
+Statement: the strategy's losers share one geometry the labels don't encode — longs entered +73/+100 pts above stationary/rising POC, a short entered -100 pts below unmigrated POC at the low of a completed liquidation, and a long entered into POC-from-below (first-test resistance). 4/5 trades fit; partial contradiction: the lone winner (T3) was also extended above value and won +5 via trail.
+Supporting: 2026-07-06 all four losses. Contradicting: T3. Missing: everything — one session.
+Next test: compute (pocDist/ATR, side, POC-migration, volRatio) at every entry from the daily dumps; tally win rate by value-location bucket across the shadow window. This variable is computable regardless of label quality and is the refined form of the trader's 'no-context trades' intuition (supersedes the context-availability half of SH-008; R-003 updated).
 
 ## Rejected / Refined — [STRATEGY]
 
@@ -64,18 +64,3 @@ Next test: continue accumulation; bucket entries by (extension, flow-state) 2×2
 **R-001** — "Reversal-forming entries lose money" (pooled): aggregation artifact. Rejected 2026-07-06.
 **R-002** — "Discretionary entry, systematized exit" (B-01) and "human winner-management capacity" (old H-008/S-02): **misattribution** — the underlying trades were algorithmic. The +$2,035 MGC hold belongs to the strategy's DIV/ScalpHalf setups. Rejected 2026-07-06 on trader-supplied ground truth; root cause = OriginClassifier v2 defect (signal names present, origin still 'Manual').
 **H-008, H-009 (v1)** — retired as [HUMAN] entries; content reborn as SH-002/SH-007 under [STRATEGY].
-
-
-## Backfill verdicts — 2026-07-07 evening (see 2026-W28_Backfill_Import.md for evidence)
-
-**SH-001 → Moderate-candidate, REFINED:** divergence as CONFIRMER of level events (+$1,078, n=38 over 2 months) vs divergence standalone REJECTED (DIV_DIRECT n=264, -$2,061). Forward samples required before promotion; period overlaps W27 (not independent).
-**SH-009 → restructured as the MATCHED-CONDITIONS rule (Low, n=154):** extension requires flow (+$1,482 with / -$1,198 without); value requires calm (+$703 calm / -$1,001 chasing). Adverse-side sub-claim CONTRADICTED (68.2% win, n=44) and retired.
-**F-NEW `inVA` (Low, n=154):** inside value area +$1,248 vs outside -$1,262 — first VAH/VAL result; composes with matched-conditions.
-**SH-003 → WEAKENED (n=154):** winner-MAE / loser-MFE distributions nearly overlap (medians 5.7 vs 6.2 pts); crispness was small-sample.
-**SH-002 → SHARPENED:** targets capture ~all MFE (median ETD 0.6 pts, 9/9); trails net-positive (+$753, n=94); generic flatten exits are the damage (-$2,559 combined). Exit research targets the flatten path.
-**SH-004 / SH-005 → RETIRED AS STATED (measurement-driven):** regime is parameter-dependent across ≥3 emitters; cleanest (1m) series contradicts the label story. Not evidence of absence — evidence the instrument doesn't exist yet. Superseded by SH-009/inVA/volPctl family.
-**F-CANDIDATE `volPctl` (exploratory, flagged for pre-registered retest):** mid-participation +$3,341 (n=32) vs extremes negative.
-**Strategy Finding (standing):** setup sprawl — 100+ variants, most n<5; the sub-5-n tail is untestable by construction.
-
-**BACKTEST SPEC (Strategy V2 candidate, formalized 2026-07-07):** `FTR-MNQ + agreement gate` — allow FTR entries only when (inside value area AND flow not accelerating) OR (outside value area AND flow accelerating with trade direction). HIST evidence: +$1,837 vs -$935 on the blocked complement (n=30/38). Required: formal backtest on independent data or ≥3 weeks live shadow tagging before paper trading. 
-**M-11 (new measurement nuance):** POC oscillates between competing HVNs (median 5 jumps>30pts/day vs median 88 pts net travel) — `valueMigAgeMin` resets on flips; migration definition needs a persistence/acceptance criterion before migAge features are promoted.
