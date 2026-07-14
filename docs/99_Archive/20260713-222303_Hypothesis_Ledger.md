@@ -79,28 +79,3 @@ Next test: continue accumulation; bucket entries by (extension, flow-state) 2×2
 
 **BACKTEST SPEC (Strategy V2 candidate, formalized 2026-07-07):** `FTR-MNQ + agreement gate` — allow FTR entries only when (inside value area AND flow not accelerating) OR (outside value area AND flow accelerating with trade direction). HIST evidence: +$1,837 vs -$935 on the blocked complement (n=30/38). Required: formal backtest on independent data or ≥3 weeks live shadow tagging before paper trading. 
 **M-11 (new measurement nuance):** POC oscillates between competing HVNs (median 5 jumps>30pts/day vs median 88 pts net travel) — `valueMigAgeMin` resets on flips; migration definition needs a persistence/acceptance criterion before migAge features are promoted.
-
-**GATE OUT-OF-SAMPLE LEDGER (opened 2026-07-08):** Day 1: 5/5 correct classifications; allowed +$75.20, blocked -$240.40 (all three blocks = the inVA&withFlow chasing cell). FTR under spec: -$141.20 → +$66.10. n=5 — recorded, not celebrated; the promotion bar is ~30 out-of-sample FTR signals or 3 weeks.
-**SH-002 forward support (2026-07-08):** day's largest loss (-$184.40) exited via generic `Sell` flatten — the damage class, out-of-sample.
-
-**GATE OOS Day 2 (2026-07-09): 0-for-6 — perfect inversion.** Allowed -$419.30 (incl. -$406.90 fade-against-acceleration the binary misread as 'calm'); blocked +$237.00 of winners. Cumulative OOS: 5/11 correct, gated -$344.10 vs raw -$392.10. Spec continues AS WRITTEN — no mid-test modification.
-**SH-010 (new) — The agreement gate is conditional on value-migration state.** Confidence: Speculative | Evidence: OOS Day 2 inverted on a gap-and-go day with active upward value migration (POC +367 in two relocations); Day 1's 5/5 occurred with mixed/stationary value. Pre-registered variants to test on HIST+OOS after the window: (a) three-state flow with 'against-acceleration' blocked unconditionally; (b) migAge/migration-direction conditioning; (c) Context-Library day-type conditioning. NOT applied to the live spec.
-**SH-002 counter-datum:** +$150.60 winner exited via generic Sell flatten (2026-07-09) — first exception to the flatten-damage class.
-
-**FRAMEWORK ADOPTED (2026-07-09): Step 11A promotion levels.** Research_Board.md now carries stage assignments for every active item; this ledger remains the evidence detail. Gate held at Level 5 with spec frozen through the window despite the inversion day — per Level 5's own rule.
-
-**GATE OOS Day 3 (2026-07-10): 1/3.** Cumulative 6/14; gated -$974.40 vs raw -$1,033.30 — indistinguishable from nothing at current n. Spec frozen, window continues.
-**M-12 (new, self-audit): the gate's flow axis violated M-10** — deltaTrend learned on the 1m backfill, scored on the 5m live stream; bar-size-dependent field transferred across parameterizations. HIST flow-dimension evidence downgraded. Fix: 5m-native backfill re-run (Level-0 queue, ~5 min of trader time), then like-for-like re-derivation.
-**SH-002 flatten class: forward tally 3 support / 1 contradiction** after 07-10 (both losses via Sell flatten).
-
-**INCIDENT 2026-07-13 (ops): weekend hold, ≈ -$2,904.** Friday's final position never flattened; largest single loss in program history. Booked to risk governance, excluded from decision stats, permanently recorded. → N-5 (P1): EOD flatten guarantee is now the top engineering priority — the only register item with a four-figure realized cost.
-**N-6: grid FIFO pairing unreliable across unflattened boundaries; recorder position ledger is session-relative (cannot see carried positions).** Standing rule: post-incident sessions reconstruct from fills.
-**GATE OOS Day 4: 1/2 (both blocked). Cumulative 7/16; allowed -$974.40 / blocked -$444.30.** Spec frozen, window continues.
-**SH-002: flatten damage forward tally 4/1** (Engulfing_Bear covered via flatten -$524.5; Opening_Flush target captured cleanly).
-**Opening family: another live win (+$94.5)** — forward tally unbroken.
-**Value Context: first MIGRATING-state winner** (Opening_Flush) — last week's 0-for-3 cell takes its first counter-datum, exactly as the library is designed to accumulate.
-
-**TWO-ENGINE ARCHITECTURE ADOPTED (2026-07-13, trader directive).** 1m stream is the Execution Context Engine, permanent; all prior 'disable the 1m chart' recommendations RETRACTED. DI-1 CLOSED as expected behavior under the dual-engine design — the emitters still disagree, by design; the interpretation problem is solved, not the disagreement itself.
-**GATE — PARALLEL-TRACK CORRECTION (M-12 applied):** re-scored OOS window with 1m-engine flow (like-for-like with HIST learning): **12/17 correct; allowed +$22.10 / blocked -$1,440.80** vs frozen 5m track 7/16 / -$974.40 allowed. LABEL: retro-corrected — the rule was pre-registered but the re-score follows observed failure; therefore ONLY FORWARD 1m-track performance counts toward promotion. Both tracks run in parallel from 2026-07-14. Residual misses cluster on the migration day → SH-010 stays open as the conditioning layer.
-
-**STEP X+1 INSTALLED (2026-07-13): Contextual Opportunity population opened.** Rules R1–R3 frozen; seed session logged 6 candidates. Standing observation OPP-002: the strategy's FTR module is blind to the VAL/VAH level class (fields younger than the setup) — 5 with-trend value-edge retests untaken on a day it lost -$430 elsewhere. Observation only; forward recurrence across day-types required before any promotion. OPP-001: entry captured, 152-pt move banked at 23.6 pts — feeds SH-002's runner-leg question from the winners' side.
