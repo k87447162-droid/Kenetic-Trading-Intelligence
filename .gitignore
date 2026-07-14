@@ -80,3 +80,8 @@ venv/
 .Rhistory
 .RData
 .Rproj.user/
+research/sessions/
+exports/
+logs/
+screenshots/
+*.zip

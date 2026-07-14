@@ -1,6 +1,0 @@
-Trade number,Instrument,Account,Strategy,Market pos.,Qty,Entry price,Exit price,Entry time,Exit time,Entry name,Exit name,Profit,Cum. net profit,Commission,Clearing Fee,Exchange Fee,IP Fee,NFA Fee,MAE,MFE,ETD,Bars,
-1,MNQ 09-26,SimAccount2,InstitutionalLevelStrategyV2,Short,1,29707.25,29650.25,7/13/2026 7:27:00 AM,7/13/2026 7:34:38 AM,Close,Profit target,$112.70,$112.70,$1.30,$0.00,$0.00,$0.00,$0.00,$90.00,$605.00,$492.30,0,
-2,MNQ 09-26,SimAccount2,InstitutionalLevelStrategyV2,Short,1,29707.25,29650.25,7/13/2026 7:27:00 AM,7/13/2026 7:34:38 AM,Close,Profit target,$112.70,$225.40,$1.30,$0.00,$0.00,$0.00,$0.00,$90.00,$605.00,$492.30,0,
-3,MNQ 09-26,SimAccount2,InstitutionalLevelStrategyV2,Short,2,29707.25,29708.00,7/13/2026 7:27:00 AM,7/13/2026 8:34:30 AM,Close,Buy to cover,($5.60),$219.80,$2.60,$0.00,$0.00,$0.00,$0.00,$180.00,$1210.00,$1215.60,0,
-4,MNQ 09-26,SimAccount2,InstitutionalLevelStrategyV2,Short,1,29674.00,29708.00,7/13/2026 7:34:26 AM,7/13/2026 8:34:30 AM,Scalp_Opening_Flush_Short,Buy to cover,($69.30),$150.50,$1.30,$0.00,$0.00,$0.00,$0.00,$156.50,$538.50,$607.80,13,
-5,MNQ 09-26,SimAccount2,InstitutionalLevelStrategyV2,Short,1,29673.75,29708.00,7/13/2026 7:34:26 AM,7/13/2026 8:34:30 AM,Scalp_Opening_Flush_Short,Buy to cover,($69.80),$80.70,$1.30,$0.00,$0.00,$0.00,$0.00,$100.50,$66.00,$135.80,13,

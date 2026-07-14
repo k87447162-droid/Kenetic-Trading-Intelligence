@@ -1,7 +1,0 @@
-Trade number,Instrument,Account,Strategy,Market pos.,Qty,Entry price,Exit price,Entry time,Exit time,Entry name,Exit name,Profit,Cum. net profit,Commission,Clearing Fee,Exchange Fee,IP Fee,NFA Fee,MAE,MFE,ETD,Bars,
-6,MNQ 09-26,SimAccount2,,Long,1,30070.25,30049.50,7/10/2026 11:46:00 AM,7/10/2026 11:55:30 AM,Scalp_Failed_Test_Retest_Long_5m,Sell,($42.80),($625.60),$1.30,$0.00,$0.00,$0.00,$0.00,$43.00,$4.50,$47.30,3,
-2,MNQ 09-26,SimAccount2,,Long,1,29960.25,29904.25,7/10/2026 8:10:00 AM,7/10/2026 8:20:00 AM,Scalp_Engulfing_Bull_5m,Sell,($113.30),($450.20),$1.30,$0.00,$0.00,$0.00,$0.00,$139.00,$13.00,$126.30,3,
-5,MNQ 09-26,SimAccount2,,Long,3,30070.25,30049.75,7/10/2026 11:46:00 AM,7/10/2026 11:55:30 AM,Scalp_Failed_Test_Retest_Long_5m,Sell,($126.90),($582.80),$3.90,$0.00,$0.00,$0.00,$0.00,$129.00,$13.50,$140.40,3,
-4,MNQ 09-26,SimAccount2,,Short,1,30012.00,30012.25,7/10/2026 10:38:00 AM,7/10/2026 10:39:20 AM,Scalp_Failed_Test_Retest_Short_5m,Stop loss,($1.80),($455.90),$1.30,$0.00,$0.00,$0.00,$0.00,$4.00,$15.50,$17.30,1,
-1,MNQ 09-26,SimAccount2,,Long,3,29960.00,29904.50,7/10/2026 8:10:00 AM,7/10/2026 8:20:00 AM,Scalp_Engulfing_Bull_5m,Sell,($336.90),($336.90),$3.90,$0.00,$0.00,$0.00,$0.00,$415.50,$40.50,$377.40,3,
-3,MNQ 09-26,SimAccount2,,Short,3,30012.00,30012.00,7/10/2026 10:38:00 AM,7/10/2026 10:39:19 AM,Scalp_Failed_Test_Retest_Short_5m,Stop loss,($3.90),($454.10),$3.90,$0.00,$0.00,$0.00,$0.00,$12.00,$46.50,$50.40,1,
